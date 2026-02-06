@@ -10,6 +10,7 @@ import ProgressPage from './pages/ProgressPage';
 import CalendarPage from './pages/CalendarPage';
 import GuidePage from './pages/GuidePage';
 import BulletinPage from './pages/BulletinPage';
+import AdminPage from './pages/AdminPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -90,6 +91,15 @@ function App() {
           element={
             <ProtectedRoute>
               <BulletinPage />
+            </ProtectedRoute>
+          }
+        />
+        {/* Admin Routes */}
+        <Route
+          path="/admin/*"
+          element={
+            <ProtectedRoute>
+              <AdminPage />
             </ProtectedRoute>
           }
         />

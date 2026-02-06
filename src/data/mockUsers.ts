@@ -1,6 +1,6 @@
 import type { User } from '../types/user';
 
-export const mockUsers: Array<User & { password: string; issueCode?: string }> = [
+export const mockUsers: Array<User & { password: string; issueCode?: string; role?: 'student' | 'admin' }> = [
     {
         id: 'student1',
         password: 'password123',
@@ -13,6 +13,7 @@ export const mockUsers: Array<User & { password: string; issueCode?: string }> =
         totalPoints: 1250,
         streak: 7,
         issueCode: 'TF2024',
+        role: 'student',
     },
     {
         id: 'student2',
@@ -26,5 +27,19 @@ export const mockUsers: Array<User & { password: string; issueCode?: string }> =
         totalPoints: 2150,
         streak: 14,
         issueCode: 'TF2024',
+        role: 'student',
+    },
+    {
+        id: 'admin',
+        password: 'admin123',
+        name: '관리자',
+        email: 'admin@thefirst.com',
+        grade: '관리자',
+        school: 'The First Academy',
+        profileImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=admin',
+        level: 99,
+        totalPoints: 0,
+        streak: 0,
+        role: 'admin',
     },
 ];
