@@ -4,7 +4,7 @@ export const mockUsers: Array<User & { password: string; issueCode?: string; rol
     {
         id: 'student1',
         password: 'password123',
-        name: '김학생',
+        name: '고재선',
         email: 'student1@thefirst.com',
         grade: '중학교 2학년',
         school: 'The First Academy',

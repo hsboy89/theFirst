@@ -106,7 +106,7 @@ export default function LeaderboardPage() {
                                 <div className="flex items-center gap-4">
                                     <span className="text-4xl font-bold">374</span>
                                     <div>
-                                        <p className="font-medium">김학생</p>
+                                        <p className="font-medium">고재선</p>
                                         <p className="text-sm opacity-80">중학교 2학년</p>
                                     </div>
                                 </div>

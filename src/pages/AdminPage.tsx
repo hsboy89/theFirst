@@ -108,7 +108,7 @@ function DashboardOverview() {
                     <h2 className="text-xl font-bold mb-4">Recent Activity</h2>
                     <div className="space-y-4">
                         {[
-                            { text: '김학생 completed Word Match quiz', time: '5분 전' },
+                            { text: '고재선 completed Word Match quiz', time: '5분 전' },
                             { text: '박학생 reached Level 6', time: '15분 전' },
                             { text: '이학생 memorized 10 new words', time: '1시간 전' },
                             { text: 'New student 최학생 registered', time: '2시간 전' },
@@ -211,8 +211,8 @@ function VocabularyManagement() {
                                 <td className="py-3 px-4">{word.meaning}</td>
                                 <td className="py-3 px-4">
                                     <span className={`px-2 py-1 rounded-full text-xs ${word.difficulty === 'easy' ? 'bg-green-100 text-green-600' :
-                                            word.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-600' :
-                                                'bg-red-100 text-red-600'
+                                        word.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-600' :
+                                            'bg-red-100 text-red-600'
                                         }`}>
                                         {word.difficulty}
                                     </span>
@@ -277,7 +277,7 @@ function VocabularyManagement() {
 // Student Management
 function StudentManagement() {
     const students = [
-        { id: 1, name: '김학생', grade: '중학교 2학년', level: 5, points: 1250, status: 'active' },
+        { id: 1, name: '고재선', grade: '중학교 2학년', level: 5, points: 1250, status: 'active' },
         { id: 2, name: '박학생', grade: '중학교 1학년', level: 4, points: 980, status: 'active' },
         { id: 3, name: '이학생', grade: '중학교 3학년', level: 6, points: 1450, status: 'inactive' },
         { id: 4, name: '최학생', grade: '초등학교 6학년', level: 3, points: 650, status: 'active' },
