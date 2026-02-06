@@ -1,0 +1,30 @@
+import type { User } from '../types/user';
+
+export const mockUsers: Array<User & { password: string; issueCode?: string }> = [
+    {
+        id: 'student1',
+        password: 'password123',
+        name: '김학생',
+        email: 'student1@thefirst.com',
+        grade: '중학교 2학년',
+        school: 'The First Academy',
+        profileImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=student1',
+        level: 5,
+        totalPoints: 1250,
+        streak: 7,
+        issueCode: 'TF2024',
+    },
+    {
+        id: 'student2',
+        password: 'password123',
+        name: '이예은',
+        email: 'student2@thefirst.com',
+        grade: '중학교 3학년',
+        school: 'The First Academy',
+        profileImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=student2',
+        level: 8,
+        totalPoints: 2150,
+        streak: 14,
+        issueCode: 'TF2024',
+    },
+];

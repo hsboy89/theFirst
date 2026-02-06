@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #4A90E2;
+  --primary-orange: #FF8C42;
+  --primary-green: #6BCF7E;
+  --primary-purple: #9B59B6;
+  --secondary-pink: #FF6B9D;
+  --secondary-yellow: #FFD93D;
+  --bg-light: #F5F7FA;
+  --bg-dark: #2C3E50;
+  --text-primary: #2C3E50;
+  --text-secondary: #7F8C8D;
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-blue: linear-gradient(135deg, #667eea 0%, #4A90E2 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-blue {
+    background: var(--gradient-blue);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
