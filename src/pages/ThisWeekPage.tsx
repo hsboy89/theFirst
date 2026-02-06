@@ -2,44 +2,46 @@ import Sidebar from '../components/layout/Sidebar/Sidebar';
 import Header from '../components/layout/Header/Header';
 import { BookOpen, Layers, HelpCircle, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
-const weeklyItems = [
-    {
-        title: 'My Words',
-        icon: BookOpen,
-        color: 'bg-orange-100',
-        iconColor: 'text-orange-500',
-        path: '/vocabulary',
-        count: '30 words'
-    },
-    {
-        title: 'Flashcards',
-        icon: Layers,
-        color: 'bg-blue-100',
-        iconColor: 'text-blue-500',
-        path: '/vocabulary',
-        count: '10 sets'
-    },
-    {
-        title: 'Quizzes',
-        icon: HelpCircle,
-        color: 'bg-green-100',
-        iconColor: 'text-green-500',
-        path: '/quizzes',
-        count: '5 quizzes'
-    },
-    {
-        title: 'Reports',
-        icon: BarChart3,
-        color: 'bg-purple-100',
-        iconColor: 'text-purple-500',
-        path: '/reports',
-        count: 'View all'
-    },
-];
+import { useVocabStore } from '../store/vocabStore';
 
 export default function ThisWeekPage() {
     const navigate = useNavigate();
+    const { vocabularies, memorizedWords } = useVocabStore();
+
+    const weeklyItems = [
+        {
+            title: 'My Words',
+            icon: BookOpen,
+            color: 'bg-orange-100',
+            iconColor: 'text-orange-500',
+            path: '/vocabulary',
+            count: `${vocabularies.length} words`
+        },
+        {
+            title: 'Flashcards',
+            icon: Layers,
+            color: 'bg-blue-100',
+            iconColor: 'text-blue-500',
+            path: '/vocabulary',
+            count: `${Math.ceil(vocabularies.length / 5)} sets`
+        },
+        {
+            title: 'Quizzes',
+            icon: HelpCircle,
+            color: 'bg-green-100',
+            iconColor: 'text-green-500',
+            path: '/vocabulary',
+            count: '4 quizzes'
+        },
+        {
+            title: 'Reports',
+            icon: BarChart3,
+            color: 'bg-purple-100',
+            iconColor: 'text-purple-500',
+            path: '/vocabulary',
+            count: 'View all'
+        },
+    ];
 
     return (
         <div className="flex min-h-screen bg-gray-100">
@@ -81,7 +83,7 @@ export default function ThisWeekPage() {
                             <h2 className="text-xl font-bold mb-4">📈 Weekly Progress</h2>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 <div className="text-center p-4 bg-green-50 rounded-xl">
-                                    <p className="text-3xl font-bold text-green-600">25</p>
+                                    <p className="text-3xl font-bold text-green-600">{memorizedWords.length}</p>
                                     <p className="text-sm text-gray-600">Words Learned</p>
                                 </div>
                                 <div className="text-center p-4 bg-blue-50 rounded-xl">
@@ -89,7 +91,9 @@ export default function ThisWeekPage() {
                                     <p className="text-sm text-gray-600">Quizzes Passed</p>
                                 </div>
                                 <div className="text-center p-4 bg-purple-50 rounded-xl">
-                                    <p className="text-3xl font-bold text-purple-600">85%</p>
+                                    <p className="text-3xl font-bold text-purple-600">
+                                        {vocabularies.length > 0 ? Math.round((memorizedWords.length / vocabularies.length) * 100) : 0}%
+                                    </p>
                                     <p className="text-sm text-gray-600">Accuracy</p>
                                 </div>
                                 <div className="text-center p-4 bg-orange-50 rounded-xl">
