@@ -1,6 +1,6 @@
 import Sidebar from '../components/layout/Sidebar/Sidebar';
 import Header from '../components/layout/Header/Header';
-import { BookOpen, Layers, HelpCircle, BarChart3, Play, ChevronRight } from 'lucide-react';
+import { BookOpen, HelpCircle, BarChart3, Play, ChevronRight } from 'lucide-react';
 
 const guides = [
     {
