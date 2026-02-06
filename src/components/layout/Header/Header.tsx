@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { HelpCircle, X } from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
 
 const tabs = [
     { label: 'Home', path: '/' },
@@ -35,10 +35,8 @@ export default function Header() {
                     <HelpCircle size={18} />
                     Help
                 </button>
-                <button className="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-all">
-                    <X size={18} />
-                </button>
             </div>
         </header>
     );
 }
+
